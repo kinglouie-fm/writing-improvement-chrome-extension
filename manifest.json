@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Writing Improvement Extension",
+    "version": "1.0",
+    "description": "Improve your writing style with AI.",
+    "permissions": [
+      "activeTab"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
