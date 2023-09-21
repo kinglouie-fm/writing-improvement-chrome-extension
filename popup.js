@@ -1,4 +1,3 @@
-// popup.js
 document.addEventListener('DOMContentLoaded', function () {
     const inputText = document.getElementById('inputText');
     const improveButton = document.getElementById('improveButton');
@@ -6,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
   
     improveButton.addEventListener('click', async () => {
       const text = inputText.value;
-
-      const apiKey = process.env.OPENAI_API_KEY;
 
       // Implement ChatGPT integration here to improve the text
       // You'll need to send a request to the ChatGPT API
@@ -27,10 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${apiKey}',
+        'Authorization': 'Bearer ',
       },
       body: JSON.stringify({ text }),
     });
+
     const data = await response.json();
     return data.improvedText; // Adjust this based on the API response format
   }
