@@ -6,17 +6,20 @@ document.addEventListener('DOMContentLoaded', function () {
   
     improveButton.addEventListener('click', async () => {
       const text = inputText.value;
+
+      const apiKey = process.env.OPENAI_API_KEY;
+
       // Implement ChatGPT integration here to improve the text
       // You'll need to send a request to the ChatGPT API
   
       // Example: Replace this with actual ChatGPT integration
-      const improvedText = await improveTextWithChatGPT(text);
+      const improvedText = await improveTextWithChatGPT(text, apiKey);
   
       outputText.textContent = improvedText;
     });
   });
   
-  async function improveTextWithChatGPT(text) {
+  async function improveTextWithChatGPT(text, apiKey) {
     // Implement ChatGPT API call here to improve the text
     // You will need to use an API key and make a POST request to the API
     // Replace this with actual API integration
@@ -24,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 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',
+        'Authorization': 'Bearer ${apiKey}',
       },
       body: JSON.stringify({ text }),
     });
